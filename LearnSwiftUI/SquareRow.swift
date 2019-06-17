@@ -9,8 +9,7 @@
 import SwiftUI
 
 struct Square: View {
-  var label: String
-  @State var isClicked = false
+  @Binding var isClicked: Bool
   
   var body: some View {
     let icon = Image(systemName: isClicked ? "star.fill" : "star").imageScale(.large)
@@ -27,20 +26,23 @@ struct Square: View {
 }
 
 struct SquareRow : View {
-  let label = "X"
+  @State var steps: Slice<[Bool]>
+  
   var body: some View {
     HStack {
-      Square(label: label)
-      Square(label: label)
-      Square(label: label)
+      Square(isClicked: $steps[0])
+      Square(isClicked: $steps[1])
+      Square(isClicked: $steps[2])
     }
   }
 }
 
-#if DEBUG
-struct SquareRow_Previews : PreviewProvider {
-  static var previews: some View {
-    SquareRow()
-  }
-}
-#endif
+//#if DEBUG
+//struct SquareRow_Previews : PreviewProvider {
+//
+//
+//  static var previews: some View {
+//    SquareRow)
+//  }
+//}
+//#endif
