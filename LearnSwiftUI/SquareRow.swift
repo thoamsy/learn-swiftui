@@ -10,7 +10,7 @@ import SwiftUI
 
 struct Square: View {
   @Binding var iconName: String
-  @Binding var who: Bool
+  @Binding var isMe: Bool
   
   var body: some View {
     let icon = Image(systemName: iconName).imageScale(.large).accentColor(.black)
@@ -18,8 +18,8 @@ struct Square: View {
     
     return Button(action: {
       withAnimation {
-        self.iconName = self.who ? "star.fill" : "star"
-        self.who.toggle()
+        self.iconName = self.isMe ? "star.fill" : "star"
+        self.isMe.toggle()
       }
     }) {
       icon
@@ -31,13 +31,13 @@ struct Square: View {
 }
 
 struct SquareRow : View {
-  @State var steps: Slice<[String]>
-  @Binding var who: Bool
+  @Binding var steps: Slice<[String]>
+  @Binding var isMe: Bool
   var body: some View {
     HStack {
-      Square(iconName: $steps[0], who: $who)
-      Square(iconName: $steps[1], who: $who)
-      Square(iconName: $steps[2], who: $who)
+      Square(iconName: $steps[0], isMe: $isMe)
+      Square(iconName: $steps[1], isMe: $isMe)
+      Square(iconName: $steps[2], isMe: $isMe)
     }
   }
 }
@@ -47,7 +47,7 @@ struct SquareRow : View {
 //
 //
 //  static var previews: some View {
-//    SquareRow)
+//    SquareRow(steps: .constant(["circle", "circle", "circle"]), who: .constant(false))
 //  }
 //}
 //#endif
