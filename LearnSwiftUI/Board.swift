@@ -10,7 +10,8 @@ import SwiftUI
 
 struct Board : View {
   let row = 3
-  @State var steps = Array(repeatElement(false, count: 3 * 3))
+  @State var isYourTurn = false
+  @State var steps = Array(repeatElement("circle", count: 3 * 3))
   
   var body: some View {
     print(steps)
@@ -18,7 +19,8 @@ struct Board : View {
     return VStack {
       ForEach(1...row) { now in
         SquareRow(
-          steps: self.steps[now * 3 ..< (now + 1) * 3]
+          steps: self.steps[now * 3 ..< (now + 1) * 3],
+          who: self.$isYourTurn
         )
       }
     }

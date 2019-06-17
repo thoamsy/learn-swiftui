@@ -9,13 +9,18 @@
 import SwiftUI
 
 struct Square: View {
-  @Binding var isClicked: Bool
+  @Binding var iconName: String
+  @Binding var who: Bool
   
   var body: some View {
-    let icon = Image(systemName: isClicked ? "star.fill" : "star").imageScale(.large)
+    let icon = Image(systemName: iconName).imageScale(.large).accentColor(.black)
+    
     
     return Button(action: {
-      withAnimation { self.isClicked.toggle() }
+      withAnimation {
+        self.iconName = self.who ? "star.fill" : "star"
+        self.who.toggle()
+      }
     }) {
       icon
       }.frame(
@@ -26,13 +31,13 @@ struct Square: View {
 }
 
 struct SquareRow : View {
-  @State var steps: Slice<[Bool]>
-  
+  @State var steps: Slice<[String]>
+  @Binding var who: Bool
   var body: some View {
     HStack {
-      Square(isClicked: $steps[0])
-      Square(isClicked: $steps[1])
-      Square(isClicked: $steps[2])
+      Square(iconName: $steps[0], who: $who)
+      Square(iconName: $steps[1], who: $who)
+      Square(iconName: $steps[2], who: $who)
     }
   }
 }
