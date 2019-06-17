@@ -10,22 +10,30 @@ import SwiftUI
 
 struct Square: View {
   var label: String
+  @State var isClicked = false
+  
   var body: some View {
+    let icon = Image(systemName: isClicked ? "star.fill" : "star").imageScale(.large)
     
-    Text(label).bold().tapAction {
-      _ = Alert(title: Text("Foobar"))
-    }.frame(width: 40, height: 40)
+    return Button(action: {
+      withAnimation { self.isClicked.toggle() }
+    }) {
+      icon
+      }.frame(
+        width: 80,
+        height: 80
+      )
   }
 }
 
 struct SquareRow : View {
   let label = "X"
   var body: some View {
-      HStack {
-        Square(label: label)
-        Square(label: label)
-        Square(label: label)
-      }.frame(width: 120, height: 120)
+    HStack {
+      Square(label: label)
+      Square(label: label)
+      Square(label: label)
+    }
   }
 }
 

@@ -14,6 +14,7 @@
 		595228FF22B7CF710002EE03 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 595228FE22B7CF710002EE03 /* Preview Assets.xcassets */; };
 		5952290222B7CF710002EE03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5952290022B7CF710002EE03 /* LaunchScreen.storyboard */; };
 		5952290A22B7D0230002EE03 /* SquareRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5952290922B7D0230002EE03 /* SquareRow.swift */; };
+		5952290C22B7D5C30002EE03 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5952290B22B7D5C30002EE03 /* Board.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		5952290122B7CF710002EE03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5952290322B7CF710002EE03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5952290922B7D0230002EE03 /* SquareRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareRow.swift; sourceTree = "<group>"; };
+		5952290B22B7D5C30002EE03 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				5952290322B7CF710002EE03 /* Info.plist */,
 				595228FD22B7CF710002EE03 /* Preview Content */,
 				5952290922B7D0230002EE03 /* SquareRow.swift */,
+				5952290B22B7D5C30002EE03 /* Board.swift */,
 			);
 			path = LearnSwiftUI;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 			files = (
 				595228F622B7CF6C0002EE03 /* AppDelegate.swift in Sources */,
 				595228F822B7CF6C0002EE03 /* SceneDelegate.swift in Sources */,
+				5952290C22B7D5C30002EE03 /* Board.swift in Sources */,
 				595228FA22B7CF6C0002EE03 /* ContentView.swift in Sources */,
 				5952290A22B7D0230002EE03 /* SquareRow.swift in Sources */,
 			);
