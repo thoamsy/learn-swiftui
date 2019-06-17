@@ -15,10 +15,11 @@ struct Square: View {
   var body: some View {
     let icon = Image(systemName: iconName).imageScale(.large).accentColor(.black)
     
-    
     return Button(action: {
       withAnimation {
-        self.iconName = self.isMe ? "star.fill" : "star"
+        self.iconName = self.isMe
+          ? "circle.fill"
+          : "xmark.circle.fill"
         self.isMe.toggle()
       }
     }) {
@@ -31,7 +32,7 @@ struct Square: View {
 }
 
 struct SquareRow : View {
-  @Binding var steps: Slice<[String]>
+  @State var steps: Slice<[String]>
   @Binding var isMe: Bool
   var body: some View {
     HStack {

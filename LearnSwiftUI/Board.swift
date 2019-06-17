@@ -19,7 +19,7 @@ struct Board : View {
     return VStack {
       ForEach(1...row) { now in
         SquareRow(
-          steps: self.$steps[now * 3 ..< (now + 1) * 3],
+          steps: self.steps[now * 3 ..< (now + 1) * 3],
           isMe: self.$isMe
         )
       }
