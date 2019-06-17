@@ -13,6 +13,7 @@
 		595228FC22B7CF710002EE03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 595228FB22B7CF710002EE03 /* Assets.xcassets */; };
 		595228FF22B7CF710002EE03 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 595228FE22B7CF710002EE03 /* Preview Assets.xcassets */; };
 		5952290222B7CF710002EE03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5952290022B7CF710002EE03 /* LaunchScreen.storyboard */; };
+		5952290A22B7D0230002EE03 /* SquareRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5952290922B7D0230002EE03 /* SquareRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		595228FE22B7CF710002EE03 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5952290122B7CF710002EE03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5952290322B7CF710002EE03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5952290922B7D0230002EE03 /* SquareRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				5952290022B7CF710002EE03 /* LaunchScreen.storyboard */,
 				5952290322B7CF710002EE03 /* Info.plist */,
 				595228FD22B7CF710002EE03 /* Preview Content */,
+				5952290922B7D0230002EE03 /* SquareRow.swift */,
 			);
 			path = LearnSwiftUI;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 				595228F622B7CF6C0002EE03 /* AppDelegate.swift in Sources */,
 				595228F822B7CF6C0002EE03 /* SceneDelegate.swift in Sources */,
 				595228FA22B7CF6C0002EE03 /* ContentView.swift in Sources */,
+				5952290A22B7D0230002EE03 /* SquareRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
