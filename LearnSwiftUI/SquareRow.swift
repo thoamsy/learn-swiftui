@@ -27,7 +27,7 @@ struct Square: View {
       }.frame(
         width: 80,
         height: 80
-      )
+      ).disabled(self.iconName != "circle")
   }
 }
 
