@@ -13,7 +13,7 @@ struct Square: View {
   @Binding var isMe: Bool
   
   var body: some View {
-    let icon = Image(systemName: iconName).imageScale(.large).accentColor(.black)
+    let icon = Image(systemName: iconName).imageScale(.large).accentColor(.primary)
     
     return Button(action: {
       withAnimation {
