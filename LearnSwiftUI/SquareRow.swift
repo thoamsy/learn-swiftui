@@ -11,6 +11,7 @@ import SwiftUI
 struct Square: View {
   @Binding var iconName: String
   @Binding var isMe: Bool
+  let isEnd: Bool
   
   var body: some View {
     let icon = Image(systemName: iconName).imageScale(.large).accentColor(.primary)
@@ -27,18 +28,36 @@ struct Square: View {
       }.frame(
         width: 80,
         height: 80
-      ).disabled(self.iconName != "circle")
+      ).disabled(self.iconName != "circle" || isEnd)
   }
 }
 
 struct SquareRow : View {
-  @State var steps: Slice<[String]>
+  @Binding var steps: [String]
   @Binding var isMe: Bool
+  @Binding var showAlert: Bool
+  let offset: Int
+  
+  // NOTE: 在这里的对 showAlert 的改动并不会同步给父组件
+  // 这可能是 SwiftUI 在 action 中做了特殊的双向绑定，但是普通函数里没有
+  func calculateWinner() {
+    if (showAlert) { return }
+    for line in Board.linesWhatCanWin {
+      let (a, b, c) = line
+      if (steps[a] != "circle" && steps[a] == steps[b] && steps[b] == steps[c]) {
+        self.showAlert.toggle()
+        return
+      }
+    }
+  }
+  
+  
   var body: some View {
-    HStack {
-      Square(iconName: $steps[0], isMe: $isMe)
-      Square(iconName: $steps[1], isMe: $isMe)
-      Square(iconName: $steps[2], isMe: $isMe)
+    calculateWinner()
+    return HStack {
+      ForEach(0..<3) {
+        Square(iconName: self.$steps[self.offset + $0], isMe: self.$isMe, isEnd: self.showAlert)
+      }
     }
   }
 }
