@@ -12,6 +12,7 @@ struct Square: View {
   @Binding var iconName: String
   @Binding var isMe: Bool
   let isEnd: Bool
+  let getWinner: () -> Void
   
   var body: some View {
     let icon = Image(systemName: iconName).imageScale(.large).accentColor(.primary)
@@ -22,6 +23,7 @@ struct Square: View {
           ? "circle.fill"
           : "xmark.circle.fill"
         self.isMe.toggle()
+        self.getWinner()
       }
     }) {
       icon
@@ -53,10 +55,14 @@ struct SquareRow : View {
   
   
   var body: some View {
-    calculateWinner()
     return HStack {
       ForEach(0..<3) {
-        Square(iconName: self.$steps[self.offset + $0], isMe: self.$isMe, isEnd: self.showAlert)
+        Square(
+          iconName: self.$steps[self.offset + $0],
+          isMe: self.$isMe,
+          isEnd: self.showAlert,
+          getWinner: self.calculateWinner
+        )
       }
     }
   }
