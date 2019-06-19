@@ -18,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		59234ADF22BAA806000450D8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		595228F222B7CF6C0002EE03 /* LearnSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearnSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		595228F522B7CF6C0002EE03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		595228F722B7CF6C0002EE03 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +70,7 @@
 				595228FD22B7CF710002EE03 /* Preview Content */,
 				5952290922B7D0230002EE03 /* SquareRow.swift */,
 				5952290B22B7D5C30002EE03 /* Board.swift */,
+				59234ADF22BAA806000450D8 /* README.md */,
 			);
 			path = LearnSwiftUI;
 			sourceTree = "<group>";

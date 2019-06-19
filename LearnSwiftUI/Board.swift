@@ -21,6 +21,7 @@ struct Board : View {
     (0, 4, 8),
     (2, 4, 6)
   ]
+  
   @State var showAlert = false
   @State var isMe = true
   @State var steps = Array(repeatElement("circle", count: 3 * 3))
