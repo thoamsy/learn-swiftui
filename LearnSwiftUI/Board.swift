@@ -22,7 +22,7 @@ struct Board : View {
     (2, 4, 6)
   ]
   @State var showAlert = false
-  @State var isMe = false
+  @State var isMe = true
   @State var steps = Array(repeatElement("circle", count: 3 * 3))
   
   func clearSteps() {
@@ -50,7 +50,14 @@ struct Board : View {
         )
       }
       }.presentation($showAlert) {
-        Alert(title: Text("游戏结束"), message: Text("You Win"))
+        Alert(
+          title: Text("游戏结束"),
+          message: Text("\(self.isMe ? "Me" : "You") Win"),
+          dismissButton: .default(
+              Text("重新来过"),
+              onTrigger: self.clearSteps
+          )
+        )
     }
   }
 }
