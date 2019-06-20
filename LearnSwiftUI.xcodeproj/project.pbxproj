@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		59234AE322BBD2EE000450D8 /* EasyForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59234AE222BBD2EE000450D8 /* EasyForm.swift */; };
 		595228F622B7CF6C0002EE03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595228F522B7CF6C0002EE03 /* AppDelegate.swift */; };
 		595228F822B7CF6C0002EE03 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595228F722B7CF6C0002EE03 /* SceneDelegate.swift */; };
 		595228FA22B7CF6C0002EE03 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595228F922B7CF6C0002EE03 /* ContentView.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		59234ADF22BAA806000450D8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		59234AE222BBD2EE000450D8 /* EasyForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyForm.swift; sourceTree = "<group>"; };
 		595228F222B7CF6C0002EE03 /* LearnSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearnSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		595228F522B7CF6C0002EE03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		595228F722B7CF6C0002EE03 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +44,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		59234AE022BBD2AB000450D8 /* Tic-Tac-Toe */ = {
+			isa = PBXGroup;
+			children = (
+				5952290B22B7D5C30002EE03 /* Board.swift */,
+				5952290922B7D0230002EE03 /* SquareRow.swift */,
+			);
+			path = "Tic-Tac-Toe";
+			sourceTree = "<group>";
+		};
+		59234AE122BBD2D9000450D8 /* Form */ = {
+			isa = PBXGroup;
+			children = (
+				59234AE222BBD2EE000450D8 /* EasyForm.swift */,
+			);
+			path = Form;
+			sourceTree = "<group>";
+		};
 		595228E922B7CF6C0002EE03 = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +80,8 @@
 		595228F422B7CF6C0002EE03 /* LearnSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				59234AE122BBD2D9000450D8 /* Form */,
+				59234AE022BBD2AB000450D8 /* Tic-Tac-Toe */,
 				595228F522B7CF6C0002EE03 /* AppDelegate.swift */,
 				595228F722B7CF6C0002EE03 /* SceneDelegate.swift */,
 				595228F922B7CF6C0002EE03 /* ContentView.swift */,
@@ -68,8 +89,6 @@
 				5952290022B7CF710002EE03 /* LaunchScreen.storyboard */,
 				5952290322B7CF710002EE03 /* Info.plist */,
 				595228FD22B7CF710002EE03 /* Preview Content */,
-				5952290922B7D0230002EE03 /* SquareRow.swift */,
-				5952290B22B7D5C30002EE03 /* Board.swift */,
 				59234ADF22BAA806000450D8 /* README.md */,
 			);
 			path = LearnSwiftUI;
@@ -157,6 +176,7 @@
 				595228F622B7CF6C0002EE03 /* AppDelegate.swift in Sources */,
 				595228F822B7CF6C0002EE03 /* SceneDelegate.swift in Sources */,
 				5952290C22B7D5C30002EE03 /* Board.swift in Sources */,
+				59234AE322BBD2EE000450D8 /* EasyForm.swift in Sources */,
 				595228FA22B7CF6C0002EE03 /* ContentView.swift in Sources */,
 				5952290A22B7D0230002EE03 /* SquareRow.swift in Sources */,
 			);
