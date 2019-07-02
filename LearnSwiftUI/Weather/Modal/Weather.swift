@@ -61,7 +61,7 @@ struct Weather: Codable {
 
 struct DailyWeather: Codable, Identifiable {
   var id: Date {
-    time
+    return time
   }
   var time: Date
   var maxTemperature: Double
@@ -78,7 +78,7 @@ struct DailyWeather: Codable, Identifiable {
 
 struct HourlyWeather: Codable, Identifiable {
   var id: Date {
-    time
+    return time
   }
   
   var time: Date

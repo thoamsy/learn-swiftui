@@ -10,7 +10,7 @@ import SwiftUI
 import Combine
 
 class CityStore: BindableObject {
-  let didChange =  PassthroughSubject<Self, Never>()
+  let didChange =  PassthroughSubject<CityStore, Never>()
   
   var cities: [City] = [City(name: "Shangrao")] {
     didSet {
