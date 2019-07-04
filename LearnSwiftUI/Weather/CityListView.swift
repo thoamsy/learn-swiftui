@@ -38,9 +38,11 @@ struct CityHourlyView : View {
   private let rowHeight: CGFloat = 110
   
   var body: some View {
-    ScrollView {
-      HStack(spacing: 16) {
-        ForEach(city.weather?.hours.list ?? []) { hour in
+    ScrollView(
+    .horizontal,
+    showsIndicators: false) {
+      HStack(alignment: .center, spacing: 16) {
+        ForEach(city.weather?.hours.list[0..<10] ?? []) { hour in
           VStack(spacing: 16) {
             Text(hour.time.formattedHour).font(.footnote)
             hour.icon.image.font(.body)
@@ -138,11 +140,11 @@ struct CityListView : View {
   
   private var addButton: some View {
     Button(action: {
-      self.isAddingCity = true
+      self.isAddingCity.toggle()
       self.isEditing = false
     }) {
       Image(systemName: "plus.circle.fill")
-        .font(.title)
+        .font(.title).foregroundColor(.blue)
       }
       .presentation(isAddingCity ? newCityView : nil)
   }
@@ -177,7 +179,10 @@ struct CityListView : View {
 #if DEBUG
 struct CityListView_Previews : PreviewProvider {
   static var previews: some View {
+    Group { CityListView().environmentObject(CityStore()).environment(\.colorScheme, .dark)
+      
     CityListView().environmentObject(CityStore())
+    }
   }
 }
 #endif
