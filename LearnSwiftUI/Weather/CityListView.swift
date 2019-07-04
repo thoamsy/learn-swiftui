@@ -137,8 +137,7 @@ struct CityListView : View {
   }
   
   private var addButton: some View {
-    print(isAddingCity)
-return    Button(action: {
+    Button(action: {
       self.isAddingCity = true
       self.isEditing = false
     }) {
@@ -168,7 +167,9 @@ return    Button(action: {
   private var newCityView: Modal {
     Modal(NewCityView(
       isAddingCity: $isAddingCity
-    ).environmentObject(cityStore))
+    ).environmentObject(cityStore)) {
+      self.isAddingCity = false
+    }
   }
   
 }
