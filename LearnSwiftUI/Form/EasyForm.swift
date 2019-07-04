@@ -60,7 +60,8 @@ struct LabelTextField: View {
   var body: some View {
     VStack(alignment: .leading) {
       Text(label).font(.headline)
-      TextField(.constant(""), placeholder: Text(placeholder))
+      
+      TextField(placeholder, text: .constant(""))
         .padding(.all)
         .background(Color["eff3ef"]!)
       }.padding(.horizontal, 15)

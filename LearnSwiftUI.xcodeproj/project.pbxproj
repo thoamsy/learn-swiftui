@@ -150,7 +150,6 @@
 			children = (
 				59892FC922CA694C00A33903 /* Weather.swift */,
 				59892FCB22CA6C6800A33903 /* WeatherManager.swift */,
-				59060EB622CBB4BF00C1653D /* CityFinder.swift */,
 			);
 			path = Modal;
 			sourceTree = "<group>";
@@ -159,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				59892FCD22CA6CFE00A33903 /* City.swift */,
+				59060EB622CBB4BF00C1653D /* CityFinder.swift */,
 				59892FCF22CA71F000A33903 /* CityStore.swift */,
 			);
 			path = Store;
