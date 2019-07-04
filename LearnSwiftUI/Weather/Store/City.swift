@@ -12,35 +12,28 @@ import Combine
 class City: BindableObject {
   var didChange = PassthroughSubject<City, Never>()
   let name: String
+  let longitude: Double
+  let latitude: Double
+  
   var weather: Weather? {
     didSet {
       didChange.send(self)
     }
   }
   
-  init(name: String) {
+  init(name: String = "Chambery") {
     self.name = name
+    self.longitude = 5.915807
+    self.latitude = 45.572353
     self.getWeather()
   }
   
-  private func getWeather( ){
-    guard let url = URL(string: WeatherManager.baseURL + "45.572353,5.915807?units=ca&lang=en-us") else {
-      return
-    }
-    
-    URLSession.shared.dataTask(with: url) {
-      (data, response, error) in
-      guard let data = data else { return }
-      do {
-        let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .secondsSince1970
-        let weatherObject = try decoder.decode(Weather.self, from: data)
-        DispatchQueue.main.async {
-          self.weather = weatherObject
-        }
-      } catch {
-        print(error.localizedDescription)
+  
+  private func getWeather() {
+    WeatherManager.getWeather(for: self) { weather in 
+      DispatchQueue.main.async {
+        self.weather = weather
       }
-    }.resume()
+    }
   }
 }

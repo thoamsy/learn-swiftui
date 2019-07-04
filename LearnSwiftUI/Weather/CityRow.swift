@@ -13,7 +13,8 @@ struct CityRow : View {
   @ObjectBinding var city: City
   
   var body: some View {
-    NavigationButton(destination: CityView(city: city)) {
+   
+  NavigationLink(destination: CityView(city: city)) {
       HStack(alignment: .firstTextBaseline) {
         Text(city.name)
           .lineLimit(nil)

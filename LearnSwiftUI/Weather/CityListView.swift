@@ -92,7 +92,7 @@ struct CityDailyView: View {
 }
 
 struct CityView: View {
-  @ObjectBinding var city = City(name: "Shangrao")
+  @ObjectBinding var city: City
   var body: some View {
     List {
       Section(header: Text("Now")) {
@@ -132,12 +132,13 @@ struct CityListView : View {
         }
         }
         .navigationBarItems(leading: EditButton(), trailing: addButton)
-        .navigationBarTitle(Text("Weather"))
+        .navigationBarTitle(Text("Weather"), displayMode: .inline)
     }
   }
   
   private var addButton: some View {
-    Button(action: {
+    print(isAddingCity)
+return    Button(action: {
       self.isAddingCity = true
       self.isEditing = false
     }) {
@@ -148,7 +149,7 @@ struct CityListView : View {
   }
   
   private func delete(at offsets: IndexSet) {
-    for index in offsets {
+    for index in offsets { 
       cityStore.cities.remove(at: index)
     }
   }
@@ -167,9 +168,7 @@ struct CityListView : View {
   private var newCityView: Modal {
     Modal(NewCityView(
       isAddingCity: $isAddingCity
-    ).environmentObject(cityStore)) {
-      self.isAddingCity = false
-    }
+    ).environmentObject(cityStore))
   }
   
 }

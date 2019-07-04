@@ -13,7 +13,7 @@ struct NewCityView : View {
   @Binding var isAddingCity: Bool
   @State private var search: String = ""
   
-  @ObjectBinding var cityFinder: CityFinder = CityFinder()
+  @ObjectBinding var cityFinder = CityFinder()
   @EnvironmentObject var cityStore: CityStore
   @Environment(\.isPresented) var isPresented: Binding<Bool>?
   
@@ -21,7 +21,8 @@ struct NewCityView : View {
     NavigationView {
       List {
         Section {
-          TextField($search, placeholder: Text("Search City")) {
+          TextField("Search City", text: $search) {
+            print(self.search)
             self.cityFinder.search(self.search)
           }
         }
@@ -31,26 +32,25 @@ struct NewCityView : View {
             Button(action: {
               self.addCity(from: result)
               self.isAddingCity = false
-              self.isPresented?.value = false
             }) {
-              Text(result)
+              Text(result).foregroundColor(.primary)
               }
-              .foregroundColor(.black)
           }
         }
         }
         .navigationBarTitle(Text("Add City"))
-        .navigationBarItems(leading: cancelButton)
+        .navigationBarItems(trailing: cancelButton)
         .listStyle(.grouped)
     }
   }
   
   private var cancelButton: some View {
-    Button(action: {
-      self.isAddingCity = false
-    }) {
-      Text("Cancel")
-    }
+    Image(systemName: "xmark.circle.fill")
+      .font(.title)
+      .foregroundColor(.red)
+      .tapAction {
+        self.isAddingCity = false
+      }
   }
   
   private func addCity(from result: String) {
@@ -60,3 +60,12 @@ struct NewCityView : View {
   }
   
 }
+
+#if DEBUG
+struct NewCityView_Previews : PreviewProvider {
+  static var previews: some View {
+      NewCityView(isAddingCity: .constant(true)).environmentObject(CityStore())
+    }
+}
+#endif
+

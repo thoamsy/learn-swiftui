@@ -30,6 +30,7 @@ class CityFinder: NSObject, BindableObject {
   }
   
   func search(_ text: String) {
+    print("fuck")
     searcher.queryFragment = text
   }
   
