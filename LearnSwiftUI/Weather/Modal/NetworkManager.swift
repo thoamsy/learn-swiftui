@@ -16,7 +16,7 @@ class NetworkManager: NSObject {
   struct APIURL {
     
     static func weatherRequest(longitude: Double, latitude: Double) -> String {
-      return "https://api.darksky.net/forecast/\(NetworkManager.Key.darkKey)/\(latitude),\(longitude)?units=ca&lang=fr"
+      return "https://api.darksky.net/forecast/\(NetworkManager.Key.darkKey)/\(latitude),\(longitude)?units=ca&lang=en-us"
     }
     
   }

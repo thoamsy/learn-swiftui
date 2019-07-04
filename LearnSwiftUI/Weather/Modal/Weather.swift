@@ -11,6 +11,12 @@ struct Weather: Codable {
   var hours: Self.List<HourlyWeather>
   var week: Self.List<DailyWeather>
   
+  enum CodingKeys: String, CodingKey {
+    case current = "currently"
+    case hours = "hourly"
+    case week = "daily"
+  }
+  
   struct List<T: Codable & Identifiable>: Codable {
     var list: [T]
     enum CodingKeys: String, CodingKey {
