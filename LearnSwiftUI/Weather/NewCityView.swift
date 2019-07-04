@@ -45,12 +45,14 @@ struct NewCityView : View {
   }
   
   private var cancelButton: some View {
-    Image(systemName: "xmark.circle.fill")
-      .font(.title)
-      .foregroundColor(.red)
-      .tapAction {
-        self.isAddingCity = false
-      }
+    Button(action: {
+      self.isAddingCity = false
+    }) {
+      Image(systemName: "xmark.circle.fill")
+        .font(.title)
+        .foregroundColor(.red)
+      
+    }
   }
   
   private func addCity(from result: String) {
