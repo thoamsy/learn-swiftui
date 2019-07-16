@@ -5,14 +5,14 @@
 
 Swift 5.1 带来的特性很多很多, 有点像新学了一个语言.
 
-1. [Synthesize default values for the memberwise initializer](https://github.com/apple/swift-evolution/blob/master/proposals/0242-default-values-memberwise.md) 具有默认值的 struct, 可以自动同步到 memberwise initializer, 少写一大波代码
-2. [Self 能力提升](https://github.com/apple/swift-evolution/blob/master/proposals/0068-universal-self.md) 你可以直接在实例方法中调用 Self.staticMethod 
-3. [Implicit returns from single-expression functions](https://github.com/apple/swift-evolution/blob/master/proposals/0255-omit-return.md) 不止是 closure, 任何表达式都可以隐藏 return 了!
+1. [Synthesize default values for the memberwise initializer](https://github.com/apple/swift-evolution/blob/master/proposals/0242-default-values-memberwise.md) 具有默认值的 `struct`, 可以自动同步到 memberwise initializer, 少写一大波代码
+2. [Self 能力提升](https://github.com/apple/swift-evolution/blob/master/proposals/0068-universal-self.md) 你可以直接在实例方法中调用 `Self.staticMethod` 
+3. [Implicit returns from single-expression functions](https://github.com/apple/swift-evolution/blob/master/proposals/0255-omit-return.md) 不止是 /closure/, 任何表达式都可以隐藏 `return` 了!
 4. [Static and class subscripts](https://github.com/apple/swift-evolution/blob/master/proposals/0254-static-subscripts.md) 给 UIColor 直接支持 rgb 或者 hue 会很好用. 比如 `UIColor["AABBCC"]`
-5. [Key path member lookup](https://github.com/apple/swift-evolution/blob/master/proposals/0252-keypath-dynamic-member-lookup.md) 可以将 UIColor["AABBCC"] 直接改成 UIColor.AABBCC, 酷到爆炸
+5. [Key path member lookup](https://github.com/apple/swift-evolution/blob/master/proposals/0252-keypath-dynamic-member-lookup.md) 可以将 `UIColor["AABBCC"]` 直接改成 `UIColor.AABBCC`, 酷到爆炸
 6. [Contiguous String](https://github.com/apple/swift-evolution/blob/master/proposals/0247-contiguous-strings.md) 老实说, 我不太了解🌚
 7. [String Gaps and Missing APIs](https://github.com/apple/swift-evolution/blob/master/proposals/0248-string-gaps-missing-apis.md) String 更强了!
-8. 以及 Swift UI 的基础 [function builder](https://github.com/apple/swift-evolution/blob/9992cf3c11c2d5e0ea20bee98657d93902d5b174/proposals/XXXX-function-builders.md)
+8. 以及 Swift UI 的基础 [Function Builder](https://github.com/apple/swift-evolution/blob/9992cf3c11c2d5e0ea20bee98657d93902d5b174/proposals/XXXX-function-builders.md)
 
 当然大多数还是语法糖, 不过就是这些看似没啥用的语法糖, 让整个语言的表达能力提升了一大截.
 
