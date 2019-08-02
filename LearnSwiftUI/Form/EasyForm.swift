@@ -86,7 +86,7 @@ struct EasyForm : View {
           LabelTextField(label: "TYPE", placeholder: "Fill Your TYPE")
           
           RoundedButton().padding(.top, 20)
-          }
+        }
           .padding(.top, 20)
           .listRowInsets(EdgeInsets())
         
